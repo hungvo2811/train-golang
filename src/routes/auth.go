@@ -7,7 +7,7 @@ import (
 )
 
 func AuthRouter(e *echo.Echo) {
-	departments := e.Group("")
+	auth := e.Group("")
 
-	departments.POST("/login", controllers.Login, validations.Login)
+	auth.POST("/login", controllers.Login, validations.Login)
 }
