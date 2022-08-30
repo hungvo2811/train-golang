@@ -34,7 +34,7 @@ func UpdateDepartment(c echo.Context) error {
 
 	result, err := services.UpdateDepartment(ctx, ID, payload)
 	if err != nil {
-		return util.Response200(c, nil, "Update Department Failed")
+		return util.Response400(c, nil, "Update Department Failed")
 	}
 
 	return util.Response200(c, result, "Update Department Successful")
