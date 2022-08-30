@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	//config.InitDotEnv()
 	e := echo.New()
 	e.Use(middleware.CORS())
 
