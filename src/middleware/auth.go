@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"github.com/golang-jwt/jwt"
-	"github.com/labstack/echo/v4/middleware"
 	"time"
 )
 
@@ -17,6 +16,3 @@ func CreateToken() string {
 	return t
 }
 
-var Auth = middleware.JWTWithConfig(middleware.JWTConfig{
-	SigningKey: []byte("secret"),
-})
