@@ -88,7 +88,7 @@ func GetStaff(ctx context.Context, id primitive.ObjectID) (res response.StaffRes
 func GetStaffs(ctx context.Context, query query.StaffQuery) (res []response.StaffResponse, err error) {
 	rs, err := dao.GetStaffs(ctx, query)
 	if err != nil {
-		return res, errors.New("Get Staffs Failed")
+		return res, errors.New("get Staffs Failed")
 	}
 
 	for _, value := range rs {

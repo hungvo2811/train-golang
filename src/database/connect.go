@@ -14,7 +14,6 @@ var (
 )
 
 func ConnectDB() {
-
 	cl, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://SNW:hungpro10a3@snw.wxnes.mongodb.net/?retryWrites=true&w=majority"))
 	if err != nil {
 		log.Println(err)

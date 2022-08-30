@@ -18,7 +18,7 @@ func CreateDepartment(ctx context.Context, payload payload.DepartmentPayLoad) (r
 	}
 	result, err := dao.CreateDepartment(ctx, department)
 	if err != nil {
-		err = errors.New("create department error")
+		err = errors.New("create department failed")
 		return res, err
 	}
 
@@ -35,7 +35,7 @@ func UpdateDepartment(ctx context.Context, id primitive.ObjectID, payload payloa
 	department := payload.ConvertToBSON()
 	result, err := dao.UpdateDepartment(ctx, id, department)
 	if err != nil {
-		return res, errors.New("Update department error")
+		return res, errors.New("Update department failed")
 	}
 
 	res = response.DepartmentResponse{
@@ -50,7 +50,7 @@ func UpdateDepartment(ctx context.Context, id primitive.ObjectID, payload payloa
 func DeleteDepartment(ctx context.Context, id primitive.ObjectID) error {
 	err := dao.DeleteDepartment(ctx, id)
 	if err != nil {
-		err = errors.New("delete department error")
+		err = errors.New("delete department failed")
 		return err
 	}
 
@@ -75,7 +75,7 @@ func GetDepartment(ctx context.Context, id primitive.ObjectID) (res response.Dep
 func GetDepartments(ctx context.Context, query query.DepartmentQuery) (res []response.DepartmentResponse, err error) {
 	result, err := dao.GetDepartments(ctx, query)
 	if err != nil {
-		return res, errors.New("Can not get list of department")
+		return res, errors.New("get departments failed")
 	}
 
 	for _, value := range result {
