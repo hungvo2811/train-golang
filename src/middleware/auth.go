@@ -12,7 +12,7 @@ func CreateToken() string {
 	claims["exp"] = time.Now().Add(time.Minute * 60).Unix()
 	t, err := token.SignedString([]byte("secret"))
 	if err != nil {
-		return "failed"
+		return "Failed"
 	}
 	return t
 }
